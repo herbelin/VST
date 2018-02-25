@@ -1137,7 +1137,7 @@ Lemma store_phi_elsewhere_eq: forall rsh sh mv loc',
   ~ adr_range (b, ofs) (size_chunk ch) loc'
   -> (m_phi jm) @ loc' = YES rsh sh (VAL mv) NoneP -> contents_at m' loc' = mv.
 Proof.
-destruct jm. simpl in *. clear jm.
+destruct jm. simpl in *.
 intros.
 unfold contents_at.
 rewrite store_mem_contents with
@@ -1206,7 +1206,7 @@ Lemma storebytes_phi_elsewhere_eq: forall rsh sh mv loc',
   (m_phi jm) @ loc' = YES rsh sh (VAL mv) NoneP ->
   contents_at m' loc' = mv.
 Proof.
-destruct jm. simpl in *. clear jm.
+destruct jm. simpl in *.
 intros.
 unfold contents_at.
 rewrite storebytes_mem_contents with
